@@ -1,0 +1,56 @@
+2025-06-05 17:38:51.872 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-05 17:38:51.911 [main] INFO  r.n.m.MoneyTransferApplication - Starting MoneyTransferApplication using Java 22.0.2 with PID 9456 (E:\Projects\MoneyTransfer\backend\money-transfer\target\classes started by Владимир in E:\Projects\MoneyTransfer\backend\money-transfer)
+2025-06-05 17:38:51.912 [main] INFO  r.n.m.MoneyTransferApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-05 17:38:52.795 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2025-06-05 17:38:52.808 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-5500"]
+2025-06-05 17:38:52.810 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-05 17:38:52.810 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-05 17:38:52.872 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-05 17:38:52.873 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 920 ms
+2025-06-05 17:38:53.332 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-5500"]
+2025-06-05 17:38:53.350 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path '/'
+2025-06-05 17:38:53.359 [main] INFO  r.n.m.MoneyTransferApplication - Started MoneyTransferApplication in 1.814 seconds (process running for 2.429)
+2025-06-05 17:38:58.165 [http-nio-5500-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-05 17:38:58.166 [http-nio-5500-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-05 17:38:58.167 [http-nio-5500-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-06-05 17:38:58.419 [http-nio-5500-exec-3] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request POST /transfer with body: {
+  "cardFromNumber": "1234123412341234",
+  "cardFromValidTill": "01/27",
+  "cardFromCVV": "032",
+  "cardToNumber": "4321432143214321",
+  "amount": {
+    "value": 245,
+    "currency": "RUR"
+  }
+}
+2025-06-05 17:38:58.419 [http-nio-5500-exec-3] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 200: {"operationId":"db183dc6-f770-4b69-bd6e-3fa92c246c5e"}
+2025-06-05 17:39:00.065 [http-nio-5500-exec-6] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request POST /transfer with body: {
+  "cardFromNumber": "1234123412341234",
+  "cardFromValidTill": "01/27",
+  "cardFromCVV": "032",
+  "cardToNumber": "2345234523452345",
+  "amount": {
+    "value": 245,
+    "currency": "RUR"
+  }
+}
+2025-06-05 17:39:00.065 [http-nio-5500-exec-6] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 400: {"message":"Card not found 2345234523452345","id":4002}
+2025-06-05 17:39:02.958 [http-nio-5500-exec-1] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request POST /transfer with body: {
+  "cardFromNumber": "1234123412341234",
+  "cardFromValidTill": "21/27",
+  "cardFromCVV": "345",
+  "cardToNumber": "2345234523452345",
+  "amount": {
+    "value": 245,
+    "currency": "RUR"
+  }
+}
+2025-06-05 17:39:02.959 [http-nio-5500-exec-1] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 400: {"message":"Формат должен быть MM/YY","id":4001}
+2025-06-05 17:39:26.869 [http-nio-5500-exec-4] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request OPTIONS /transfer with body: 
+2025-06-05 17:39:26.870 [http-nio-5500-exec-4] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 200: 
+2025-06-05 17:39:26.887 [http-nio-5500-exec-5] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request POST /transfer with body: {"cardFromNumber":"1234123412341234","cardToNumber":"4321432143214321","cardFromCVV":"032","cardFromValidTill":"01/27","amount":{"currency":"RUR","value":350000}}
+2025-06-05 17:39:26.887 [http-nio-5500-exec-5] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 200: {"operationId":"f923522e-eae5-4067-8180-a153d24e7e56"}
+2025-06-05 17:39:26.898 [http-nio-5500-exec-2] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request OPTIONS /confirmOperation with body: 
+2025-06-05 17:39:26.901 [http-nio-5500-exec-2] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 200: 
+2025-06-05 17:39:26.926 [http-nio-5500-exec-7] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request POST /confirmOperation with body: {"code":"0000","operationId":"f923522e-eae5-4067-8180-a153d24e7e56"}
+2025-06-05 17:39:26.926 [http-nio-5500-exec-7] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 200: {"operationId":"f923522e-eae5-4067-8180-a153d24e7e56"}
