@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,7 @@ import ru.netology.moneytransfer.dto.request.TransferRequest;
 import ru.netology.moneytransfer.dto.response.TransferResponse;
 import ru.netology.moneytransfer.service.TransferService;
 
+@Slf4j
 @RestController
 @Tag(name = "Переводы", description = "API для денежных переводов")
 @RequiredArgsConstructor
@@ -23,6 +25,7 @@ public class Controller {
     @PostMapping("/transfer")
     @Operation(summary = "Создать перевод", description = "Перевод денег с карты на карту")
     public ResponseEntity<TransferResponse> transfer(@Valid @RequestBody TransferRequest request) {
+        log.info("This is a request: [{}]", request);
         return ResponseEntity.ok(service.processTransfer(request));
     }
 
