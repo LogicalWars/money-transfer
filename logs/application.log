@@ -54,3 +54,5 @@
 2025-06-05 17:39:26.901 [http-nio-5500-exec-2] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 200: 
 2025-06-05 17:39:26.926 [http-nio-5500-exec-7] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request POST /confirmOperation with body: {"code":"0000","operationId":"f923522e-eae5-4067-8180-a153d24e7e56"}
 2025-06-05 17:39:26.926 [http-nio-5500-exec-7] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 200: {"operationId":"f923522e-eae5-4067-8180-a153d24e7e56"}
+2025-06-05 17:43:09.117 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-05 17:43:09.129 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
