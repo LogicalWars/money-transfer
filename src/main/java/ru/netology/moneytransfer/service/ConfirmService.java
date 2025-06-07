@@ -49,7 +49,8 @@ public class ConfirmService {
         Card cardFrom = transaction.getCardFrom();
         Card cardTo = transaction.getCardTo();
         int value = transaction.getAmount();
-        value = (int) (value + Math.round(value * 0.01));
+        int commission = (int) Math.round(value * 0.01);
+        value += commission;
 
         if (cardFrom.getBalance() < value) {
             transaction.setStatus(TransactionStatus.DECLINE);
@@ -61,6 +62,6 @@ public class ConfirmService {
         cardRepository.save(cardFrom);
         cardRepository.save(cardTo);
 
-        log.info("Confirm transaction: {}, amount {}, from {}, to {}", transaction.getId(), transaction.getAmount(), cardFrom, cardTo);
+        log.info("Confirm transaction: {}, amount {}, commission {}, from {}, to {}", transaction.getId(), transaction.getAmount(), commission,  cardFrom, cardTo);
     }
 }

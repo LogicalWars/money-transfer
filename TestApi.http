@@ -7,7 +7,7 @@ Content-Type: application/json
   "cardFromCVV": "032",
   "cardToNumber": "4321432143214321",
   "amount": {
-    "value": 245,
+    "value": 545000,
     "currency": "RUR"
   }
 }
@@ -18,7 +18,7 @@ POST http://localhost:5500/confirmOperation
 Content-Type: application/json
 
 {
-  "operationId": "1f421940-808f-4394-886f-6ceddc170f9d",
+  "operationId": "16685145-dd79-4042-b480-6d5970f5558a",
   "code": "0000"
 }
 
