@@ -49,6 +49,7 @@ public class ConfirmService {
         Card cardFrom = transaction.getCardFrom();
         Card cardTo = transaction.getCardTo();
         int value = transaction.getAmount();
+        value = (int) (value + Math.round(value * 0.01));
 
         if (cardFrom.getBalance() < value) {
             transaction.setStatus(TransactionStatus.DECLINE);

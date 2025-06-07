@@ -82,8 +82,8 @@ public class ConfirmServiceTest {
         assertEquals(savedTransaction.getId().toString(), response.getOperationId());
 
         assertEquals(TransactionStatus.SUCCESS, savedTransaction.getStatus());
-        assertEquals(220_000, cardTo.getBalance());
-        assertEquals(200_000, cardFrom.getBalance());
+        assertEquals(222_000, cardTo.getBalance());
+        assertEquals(198_000, cardFrom.getBalance());
     }
 
     @Test
