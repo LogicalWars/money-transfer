@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  backend:
+    image: 'transfer-backend:latest'
+    ports:
+      - '5500:5500'
+  frontend:
+    image: 'transfer-frontend:latest'
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
