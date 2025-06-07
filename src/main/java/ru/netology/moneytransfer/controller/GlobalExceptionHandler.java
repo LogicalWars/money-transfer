@@ -23,6 +23,11 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleApiException (ApiException ex) {
         return ResponseEntity.badRequest().body(new ErrorResponse(ex.getMessage(), ex.getId()));
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleRootException (Exception ex) {
+        return ResponseEntity.internalServerError().body(new ErrorResponse(ex.getMessage(), 5000));
+    }
 }
 
 
