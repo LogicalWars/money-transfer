@@ -31,3 +31,42 @@
 2025-06-07 21:55:30.397 [http-nio-5500-exec-3] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 200: {"operationId":"16685145-dd79-4042-b480-6d5970f5558a"}
 2025-06-07 21:55:32.913 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
 2025-06-07 21:55:32.949 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-07 22:15:14.060 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-07 22:15:14.118 [main] INFO  r.n.m.MoneyTransferApplication - Starting MoneyTransferApplication using Java 22.0.2 with PID 7064 (E:\Projects\MoneyTransfer\backend\money-transfer\target\classes started by Владимир in E:\Projects\MoneyTransfer\backend\money-transfer)
+2025-06-07 22:15:14.119 [main] INFO  r.n.m.MoneyTransferApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-07 22:15:15.454 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2025-06-07 22:15:15.470 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-5500"]
+2025-06-07 22:15:15.473 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-07 22:15:15.473 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-07 22:15:15.542 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-07 22:15:15.543 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1362 ms
+2025-06-07 22:15:16.143 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-5500"]
+2025-06-07 22:15:16.165 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path '/'
+2025-06-07 22:15:16.174 [main] INFO  r.n.m.MoneyTransferApplication - Started MoneyTransferApplication in 2.666 seconds (process running for 3.684)
+2025-06-07 22:15:18.047 [http-nio-5500-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-07 22:15:18.048 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-07 22:15:18.050 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-07 22:15:18.298 [http-nio-5500-exec-1] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request POST /transfer with body: {
+  "cardFromNumber": "1234123412341234",
+  "cardFromValidTill": "01/27",
+  "cardFromCVV": "032",
+  "cardToNumber": "2345234523452345",
+  "amount": {
+    "value": 245,
+    "currency": "RUR"
+  }
+}
+2025-06-07 22:15:18.298 [http-nio-5500-exec-1] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 400: {"message":"Card not found 2345234523452345","id":4002}
+2025-06-07 22:15:19.830 [http-nio-5500-exec-2] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Request POST /transfer with body: {
+  "cardFromNumber": "1234123412341234",
+  "cardFromValidTill": "21/27",
+  "cardFromCVV": "345",
+  "cardToNumber": "2345234523452345",
+  "amount": {
+    "value": 245,
+    "currency": "RUR"
+  }
+}
+2025-06-07 22:15:19.830 [http-nio-5500-exec-2] INFO  r.n.m.c.f.RequestResponseLoggingFilter - Response - 400: {"message":"Формат должен быть MM/YY","id":4001}
+2025-06-07 22:15:21.884 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-07 22:15:21.922 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
